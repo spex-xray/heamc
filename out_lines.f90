@@ -66,7 +66,7 @@
 	        e=j
 	      endif 
 	    enddo
-	    do j=1,nel+1
+	    do j=1,31
 	      if (trim(stage).eq.trim(roman(j))) then
 	        c=j-1
 	      endif
