@@ -12,6 +12,8 @@
       real               :: conrel,conion
       real               :: val(3)
 
+      write(*,*) 'Write Pion CSD output...'
+
       ! Read electron temperature
       do i=1,3
         write(out,'(I1)') i

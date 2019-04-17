@@ -8,6 +8,8 @@
       real               :: ccomp, cbrem, crecl, ctot
       integer            :: i,j
       
+      write(*,*) 'Write Pion Heating and Cooling contributions...'
+      
       ! Define output filename
       write(out,'(a)') 'spex_pi_heatcool.dat'
       open(unit=13,file=out,status='replace')

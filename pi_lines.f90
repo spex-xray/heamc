@@ -8,6 +8,9 @@
       character*2            :: elem
       character*5            :: stage
       real                   :: lamb, tau
+
+      write(out,'(I1)') xi
+      write(*,'(a)') ' Write Pion Lines for Xi = '//trim(out)
       
       ! Open input file
       write(out,'(I1)') xi

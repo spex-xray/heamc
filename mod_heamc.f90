@@ -32,7 +32,32 @@
       
         integer, parameter                     :: nkt=51
         real, dimension(nkt)                   :: ktarr
-      
+        
+	type keylin
+	  integer                              :: num       ! Line number
+	  integer                              :: snum      ! SPEX line number
+	  character*16                         :: upper     ! Upper level
+	  real                                 :: eexc      ! electron exitation
+	  real                                 :: edeexc    ! de-excitation
+	  real                                 :: pexc      ! photon excitation
+	  real                                 :: pdeexc    ! photon de-excitation
+	  real                                 :: casto     ! cascade to
+	  real                                 :: radout    ! Radiative decay
+	  real                                 :: rrin      ! Recombination rate
+	  real                                 :: drin      ! Di-electronic recombination
+	  real                                 :: ision     ! Inner-shell ionisation
+	end type
+	
+	type keyion
+	  character*2                                 :: el        ! Element name
+	  character*4                                 :: ion       ! Ionisation stage
+	  character*16                                :: ground    ! Ground level
+	  integer                                     :: nlin      ! Number of lines for ion
+	  type (keylin), dimension(:), allocatable    :: lines 
+	end type 
+	
+	type (keyion), dimension(:), allocatable     :: keyl
+	
         ! Intermediate file names
         character*7                           :: line = 'line_kt'
         character*7                           :: icon = 'icon_kt'

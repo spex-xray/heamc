@@ -68,11 +68,11 @@
 	! Calculate level populations for selected temperature
 	
 	write(11,*) 'ions ignore all'
-	write(11,*) 'ions use ion 8 7'
-	write(11,*) 'ions use ion 8 8'
-	write(11,*) 'ions use ion 26 17'
-	write(11,*) 'ions use ion 26 25'
-	write(11,*) 'ions use ion 26 26'
+	write(11,*) 'ions use z 8'
+	!write(11,*) 'ions use ion 8 8'
+	!write(11,*) 'ions use ion 26 17'
+	!write(11,*) 'ions use ion 26 25'
+	write(11,*) 'ions use z 26'
 	write(out,'(I1)') i
         write(out,*) trim(model)//'_'//trim(levl)//trim(out)
         write(11,'("asc file ", a," 1 1 lev")') trim(out)

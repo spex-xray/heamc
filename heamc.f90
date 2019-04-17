@@ -20,7 +20,7 @@
       write(*,'(a)') '  Leiden, The Netherlands, August 8-12, 2016 '
       write(*,'(a)') '============================================='
       write(*,'(a)') ' '
-      write(*,'(a)') ' Version 0.8 - October 10, 2016 '
+      write(*,'(a)') ' Version 0.9 - October 11, 2016 '
       write(*,'(a)') ' '
       
       ! ===========================================
@@ -78,10 +78,8 @@
       call spexpion()
       
       ! Write pion CSD
-      write(*,*) 'Write Pion CSD output...'
       call pi_csd()
 
-      write(*,*) 'Write Pion Lines and absorption spectra...'
       do i=1,3
       
 	! Write 100 strongest absorption lines to file
@@ -92,7 +90,6 @@
 	
       enddo
       
-      write(*,*) 'Write Pion Heating and Cooling contributions...'
       call pi_hc()
       
       write(*,'(a)') '================================='
