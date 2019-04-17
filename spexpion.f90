@@ -45,7 +45,7 @@
 	! -- PION Lines
 	write(out,'(I1)') xi
 	write(out,*) 'pion_'//trim(plin)//trim(out)
-	write(11,'("asc file ", a," 1 2 trans sort -tau")') trim(out)
+	write(11,'("asc file ", a," 1 2 trans sort tau")') trim(out)
 	
 	! -- PION HeatCool
 	write(out,'(I1)') xi

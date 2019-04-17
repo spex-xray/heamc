@@ -20,7 +20,7 @@
       write(*,'(a)') '  Leiden, The Netherlands, August 8-12, 2016 '
       write(*,'(a)') '============================================='
       write(*,'(a)') ' '
-      write(*,'(a)') ' Version 0.9 - October 11, 2016 '
+      write(*,'(a)') ' Version 0.9.1 - April 17, 2019 '
       write(*,'(a)') ' '
       
       ! ===========================================

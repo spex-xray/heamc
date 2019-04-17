@@ -3,34 +3,48 @@
       implicit none
       
       integer, intent(in)    :: xi
-      integer                :: m, e, c, j
-      character*128          :: out,s
+      integer                :: m, e, c, j, io
+      character*128          :: out,s,f1,f2
       character*2            :: elem
       character*5            :: stage
       real                   :: lamb, tau
+      logical                :: break
 
       write(out,'(I1)') xi
       write(*,'(a)') ' Write Pion Lines for Xi = '//trim(out)
       
       ! Open input file
       write(out,'(I1)') xi
-      write(out,'(a)') 'pion_'//trim(plin)//trim(out)//'.asc'
-      
-      open(unit=13,file=trim(out),status='old')
+      write(f1,'(a)') 'pion_'//trim(plin)//trim(out)//'.asc'
+      write(f2,'(a)') 'pion_'//trim(plin)//trim(out)//'.asc.rev'
+
+      ! Reverse the order of the input file (to have highest tau up)
+      write(out,'(a)') 'tac '//trim(f1)//' > '//trim(f2)
+      call system(out)
+
+      open(unit=13,file=trim(f2),status='old')
       
       ! Open output file
-      write(out,'(I1)') xi
-      write(out,'(a)') 'spex_pi_lines'//trim(out)//'.dat'
+      write(s,'(I1)') xi
+      write(out,'(a)') 'spex_pi_lines'//trim(s)//'.dat'
       
       open(unit=14,file=trim(out),status='replace')
             
-      read(13,'(a)') s
-      read(13,'(a)') s
       write(14,*) '#      Indx   Lambda                   Z         Ion          Tau'
+
+      break=.true.
+      do while (break)
+        read(13,'(a)') s 
+        if (s(1:3).eq.'ion') then
+          break=.false.
+        endif
+      enddo
+
+      read(13,'(a)',iostat=io)
       
       m=0
       do while (m.lt.100)
-        read(13,'(a)',end=2) s
+        read(13,'(a)') s
 	read(s(8:10),*) elem
 	read(s(11:16),*) stage
 	read(s(37:43),*) lamb
@@ -41,7 +55,7 @@
 	        e=j
 	      endif 
 	    enddo
-	    do j=1,nel+1
+	    do j=1,31
 	      if (trim(stage).eq.trim(roman(j))) then
 	        c=j-1
 	      endif

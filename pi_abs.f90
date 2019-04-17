@@ -9,7 +9,7 @@
       real                   :: binl, binh
       
       write(out,'(I1)') xi
-      write(*,'(a)') 'Write Pion absorption spectra for Xi = '//trim(out)
+      write(*,'(a)') ' Write Pion absorption spectra for Xi = '//trim(out)
       write(out,'(a)') 'pion_'//trim(pspc)//trim(out)//'.qdp'
       
       open(unit=12,file=trim(out),status='old')
