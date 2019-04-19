@@ -32,7 +32,7 @@
 	
 	do while (.true.)
 	  read(12,'(a)',end=2) s
-	  if (j.ne.12) read(s(43:54),*) val
+	  if (j.ne.13) read(s(43:54),*) val
 	  select case (j)
 	    case (1)
 	      hcomp=hcomp+val*0.1
@@ -44,15 +44,15 @@
 	      hpion=hpion+val*0.1  
 	    case (5)
 	      hpion=hpion+val*0.1
-	    case (7)
+	    case (8)
 	      ccomp=ccomp+val*0.1         
-	    case (9)
+	    case (10)
 	      crecl=crecl+val*0.1
-	    case (10)   
+	    case (11)   
 	      cbrem=cbrem+val*0.1
-	    case (13)
+	    case (14)
 	      htot=val*0.1
-	    case (14) 
+	    case (15) 
 	      ctot=val*0.1   	  
 	  end select
 	  j=j+1
