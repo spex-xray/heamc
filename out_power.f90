@@ -37,9 +37,9 @@
         do while (.true.)
           read(14,'(a)',end=5) s
 	  read(s(11:13),'(a)') elnam
-	  read(s(72:85),*) ener
-	  read(s(102:111),*) pow
-	  if ((ener.ge.0.0136).and.(ener.le.13.6)) then
+	  read(s(87:102),*) ener
+	  read(s(117:128),*) pow
+          if ((ener.ge.0.0136).and.(ener.le.13.6)) then
 	    do j=1,nel
 	      if (elnam.eq.elc(j)) then
 	        ! Convert to requested units and emission measure
