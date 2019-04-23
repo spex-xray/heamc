@@ -57,9 +57,9 @@
           read(12,'(a)',end=2) s
 	  read(s(11:12),*) elem
 	  read(s(14:20),*) stage 
-	  read(s(10:70),'(a)') id
-          read(s(88:96),*) wav
-	  read(s(102:111),*) emis
+	  read(s(10:86),'(a)') id
+          read(s(103:116),*) wav
+	  read(s(118:127),*) emis
 	  if (wav.le.1000) then
 	    do j=1,nel
 	      if (trim(elem).eq.trim(elc(j))) then

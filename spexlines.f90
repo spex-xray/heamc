@@ -28,7 +28,7 @@
       end select
       
       write(11,*) 'var calc new'
-      write(11,*) 'ibal u16'
+      write(11,*) 'ibal u17'
       write(11,*) 'abun lodd'
       
       do i=1,n

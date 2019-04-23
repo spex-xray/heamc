@@ -87,7 +87,7 @@
 	    do j=1,nion
 	      do l=1,keyl(j)%nlin
 	        if ((trim(s(30:45)).eq.trim(keyl(j)%lines(l)%upper))) then
-	          if ((trim(s(55:57)).eq.trim(keyl(j)%el)).and.(trim(s(58:63)).eq.(trim(keyl(j)%ion)))) then
+	          if ((trim(s(63:65)).eq.trim(keyl(j)%el)).and.(trim(s(66:71)).eq.(trim(keyl(j)%ion)))) then
 		  read(13,'(a)',end=30) s
 		    loop=.true.
 		    do while (loop)
@@ -140,7 +140,7 @@
 	    do j=1,nion
 	      do l=1,keyl(j)%nlin
 	        if ((trim(s(30:45)).eq.trim(keyl(j)%lines(l)%upper))) then
-	          if ((trim(s(55:57)).eq.trim(keyl(j)%el)).and.(trim(s(58:63)).eq.(trim(keyl(j)%ion)))) then
+	          if ((trim(s(63:65)).eq.trim(keyl(j)%el)).and.(trim(s(66:71)).eq.(trim(keyl(j)%ion)))) then
 		  read(13,'(a)',end=40) s
 		    loop=.true.
 		    do while (loop)
