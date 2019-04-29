@@ -1,6 +1,7 @@
 # SPEX High-Energy Astrophysical Model Comparison (HEAMC)
 
 The HEAMC program is used to generate SPEX output directly comparable to other spectral codes. 
+See the [SPEX HEAMC website](https://personal.sron.nl/~jellep/heamc/) for more information.
 
 # Install
 
